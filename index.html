@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime number</title>
+</head>
+<body onload="let btn = 1;" style="text-align: center;">
+    <h1 style="text-align: center;">素数を永遠に生成しまーす！</h1>
+    <hr>
+    <button style="margin: 0 auto;" onclick="pnum();" id="go">よーい、どん！</button>
+    <div id="list" style="margin: 0 auto;">
+    </div>
+    <script>
+        function sleep(msec) {
+            return new Promise(function(resolve) {
+                setTimeout(function() {resolve()}, msec);
+            })
+        }
+        async function pnum() {
+            let i = 3;
+            let n = 1;
+            let lists = [2];
+            const but = document.getElementById('go'); 
+            but.remove();
+            let list = document.getElementById('list');
+            list.insertAdjacentHTML('beforeend', '<h4>1番目   2</h4><hr>');
+
+            while (true) {
+            for (let x = 0; x <= lists.length; x++) {
+                if (x == lists.length) {
+                lists.push(i);
+                n++;
+                list.insertAdjacentHTML('afterbegin', `<h4>${n}番目   ${i}</h4><hr>`);
+                await sleep(1);
+                break
+                } else if ((i / lists[x]) % (1) == 0) {
+                break
+                }
+            };
+
+            i++
+            }
+        }
+    </script>
+</body>
+</html>
