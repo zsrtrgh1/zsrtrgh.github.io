@@ -3,48 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="Bp_CpFdOIM7TuYRm_2_veyZjzt7DTQ43c_foezkCsmY" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Prime number</title>
-</head>
-<body onload="let btn = 1;" style="text-align: center;">
-    <h1 style="text-align: center;">素数を生成します！</h1>
-    <hr>
-    <button style="margin: 0 auto;" onclick="pnum();" id="go">よーい、どん！</button>
-    <div id="list" style="margin: 0 auto;">
-    </div>
-    <script>
-        function sleep(msec) {
-            return new Promise(function(resolve) {
-                setTimeout(function() {resolve()}, msec);
-            })
-        }
-        async function pnum() {
-            let i = 3;
-            let n = 1;
-            let lists = [2];
-            const but = document.getElementById('go'); 
-            but.remove();
-            let list = document.getElementById('list');
-            list.insertAdjacentHTML('beforeend', '<h4>1番目   2</h4><hr>');
-
-            while (true) {
-            for (let x = 0; x <= lists.length; x++) {
-                if (x == lists.length) {
-                lists.push(i);
-                n++;
-                list.insertAdjacentHTML('afterbegin', `<h4>${n}番目   ${i}</h4><hr>`);
-                await sleep(1);
-                break
-                } else if ((i / lists[x]) % (1) == 0) {
-                break
-                }
-            };
-
-            i++
+    <title>zsrtrgh1</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap");
+            * {
+                font-family: "Rubik", sans-serif;
+                margin: 0;
+                padding: 0;
+                user-select: none;
+                -moz-user-select: none;
+                -webkit-user-select: none;
             }
-        }
-    </script>
-</body>
+            html {
+                width: 100%;
+                height: 100%;
+                filter: blur(-25px);
+                animation: 30s infinite alternate forwards running colorLoop;
+            }
+            body {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            h1 {
+                color: #575757;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                animation: zoom both 0.4s;
+                transform: translateY(-50%) translateX(-50%);
+                -webkit-transform: translateY(-50%) translateX(-50%);
+            }
+            @keyframes colorLoop {
+                0% {
+                    background-color: #fbf46d;
+                }
+                35% {
+                    background-color: #b4fe98;
+                }
+                60% {
+                    background-color: #77e4d4;
+                }
+                80% {
+                    background-color: #998ceb;
+                }
+                100% {
+                    background-color: #fbf46d;
+                }
+            }
+            @keyframes zoom {
+                0% {
+                    font-size: 0rem;
+                }
+                100% {
+                    font-size: 3.2rem;
+                }
+            }
+        </style>
+</head>
+    <body>
+        <h1>zsrtrgh1</h1>
+    </body>
 </html>
